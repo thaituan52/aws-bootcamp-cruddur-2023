@@ -34,5 +34,20 @@ change export -> gp env to make it permanent
       cd $THEIA_WORKSPACE_ROOT -->
 
 
+Reference for AWS CLI : https://docs.aws.amazon.com/cli/latest/reference/
+
+_Budgets: 
+*Due to the reason that this project try to use only free tier service of AWS, I will not need it too much but for future use, this one is put into project for me to learn more about how to setup billing and budget here.
+
+*I am working on cost and usage budget:
+<!-- aws budgets create-budget \
+    --account-id $AWS_ACCOUNT_ID \
+    --budget file://aws/json/budget.json \
+    --notifications-with-subscribers file://aws/json/budget-notifications-with-subscribers.json  -->
+
+budget.json: deprived from /budgets/create-budget; use json syntax
+
+
+
 
 
