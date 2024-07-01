@@ -34,8 +34,7 @@ change export -> gp env to make it permanent
       cd $THEIA_WORKSPACE_ROOT -->
 
 
-Reference for AWS CLI : https://docs.aws.amazon.com/cli/latest/reference/
-
+*AWS Budget and SNS
 _Budgets: 
 *Due to the reason that this project try to use only free tier service of AWS, I will not need it too much but for future use, this one is put into project for me to learn more about how to setup billing and budget here.
 
@@ -45,7 +44,23 @@ _Budgets:
     --budget file://aws/json/budget.json \
     --notifications-with-subscribers file://aws/json/budget-notifications-with-subscribers.json  -->
 
-budget.json: deprived from /budgets/create-budget; use json syntax
+The 2 json files are deprived from /budgets/create-budget
+
+_SNS for Billing alert: - sns/create-topic
+To create an SNS topic: 
+aws sns create-topic \
+    --name my-topic
+
+
+
+
+*Reference:
+command for setup token
+<!-- git remote set-url origin https://<your_token>@github.com//thaituan52/aws-bootcamp-cruddur-2023.git 
+-->
+
+
+Reference for AWS CLI : https://docs.aws.amazon.com/cli/latest/reference/
 
 
 
