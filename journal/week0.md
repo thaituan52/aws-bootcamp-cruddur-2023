@@ -46,19 +46,30 @@ _Budgets:
 
 The 2 json files are deprived from /budgets/create-budget
 
-_SNS for Billing alert: - sns/create-topic
-To create an SNS topic: 
-aws sns create-topic \
-    --name my-topic
+_SNS for Billing alert: 
+To create an SNS topic - sns/create-topic: 
+<!-- aws sns create-topic \
+    --name my-topic -->
+-> TopicArn -> a subscription supply the TopicARN and our Email - sns/subcription
+
+<!-- aws sns subscribe \
+    --topic-arn TopicARN \
+    --protocol email \
+    --notification-endpoint your@email.com -->
+
+- [Create an Alarm via AWS CLI](https://repost.aws/knowledge-center/cloudwatch-estimatedcharges-alarm)
+- We need to update the configuration json script with the TopicARN we generated earlier
+- We are just a json file because --metrics is is required for expressions and so its easier to us a JSON file.
+
+```sh
+aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.json
+```
 
 
-
-
-*Reference:
-command for setup token
-<!-- git remote set-url origin https://<your_token>@github.com//thaituan52/aws-bootcamp-cruddur-2023.git 
+**Reference:
+setup token
+<!-- git remote set-url origin https://$TOKEN@github.com//thaituan52/aws-bootcamp-cruddur-2023.git 
 -->
-
 
 Reference for AWS CLI : https://docs.aws.amazon.com/cli/latest/reference/
 
