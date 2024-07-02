@@ -34,6 +34,15 @@ export AWS_DEFAULT_REGION= ""
 replace '' with your access keys
 change export -> gp env to make it permanent
 
+result:  
+```json
+{
+    "UserId": "AIDA2UC3EENEIL446QNDV",
+    "Account": "730335552328",
+    "Arn": "arn:aws:iam::730335552328:user/thaituando"
+}
+```
+
 *We can lose all of the AWS CLI setup so we gonna make the gitpod environment to get this setup everytime we get into it by updating gitpod.yml (a file to prepare and build a project in Gitpod)*
 ```yml
 tasks:
@@ -52,7 +61,7 @@ tasks:
 _Budgets: 
 *Due to the reason that this project try to use only free tier service of AWS, I will not need it too much but for future use, this one is put into project for me to learn more about how to setup billing and budget here.*
 
-I am working on cost and usage budget (deprived from */budgets/create-budget*):
+I am working on [cost and usage budget](https://docs.aws.amazon.com/cli/latest/reference/budgets/create-budget):
 
 ```sh
 aws budgets create-budget \
@@ -62,12 +71,12 @@ aws budgets create-budget \
 ```
 
 _SNS for Billing alert: 
-To create an SNS topic (deprived from */sns/create-topic*): 
+To [create an SNS topic](https://docs.aws.amazon.com/cli/latest/reference/sns/create-topic): 
 ```sh
 aws sns create-topic \
     --name my-topic
 ```
--> TopicArn -> a subscription supply the TopicARN and our Email - deprived from *sns/subcription*
+-> TopicArn -> [A subscription supply the TopicARN and our Email](https://docs.aws.amazon.com/cli/latest/reference/sns/subcription)
 
 ```sh
 aws sns subscribe \
@@ -86,11 +95,10 @@ aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.js
 
 
 ## Reference & Settings:
-[Setup token](git remote set-url origin https://$TOKEN@github.com//thaituan52/aws-bootcamp-cruddur-2023.git )
+Setup token : git remote set-url origin https://$TOKEN@github.com//thaituan52/aws-bootcamp-cruddur-2023.git 
 
 [Reference for AWS CLI](https://docs.aws.amazon.com/cli/latest/reference/)
 
-[Json files]( file://aws/json/)
 
 
 
