@@ -21,6 +21,7 @@ then
 aws sts get-caller-identity
 ```
 At this point, we are unable to locate credentials (Haven't set the environment variables at this point yet). We can:
+
 _ Configure credentials by running:
 ```sh
 aws configure
@@ -35,12 +36,12 @@ export AWS_DEFAULT_REGION= "AWS_DEFAULT_REGION"
 ```
 *Change export -> gp env to make it permanent*
 
-result after:  
+Result after:  
 ```json
 {
-    "UserId": "AIDA2UC3EENEIL446QNDV",
-    "Account": "730335552328",
-    "Arn": "arn:aws:iam::730335552328:user/thaituando"
+    "UserId": "user_id",
+    "Account": "account_id",
+    "Arn": "arn:aws:iam::account_id:user/thaituando"
 }
 ```
 
@@ -59,10 +60,10 @@ tasks:
 ```
 
 ## AWS Budget and SNS
+*Due to the reason that this project try to use only free tier service of AWS, this service will not be needed too much but for future use, this one is put into project for the project owner learn more about how to setup billing and budget here. Additionally, all of this creations can be done via AWS website manually*
 _Budgets: 
-*Due to the reason that this project try to use only free tier service of AWS, I will not need it too much but for future use, this one is put into project for me to learn more about how to setup billing and budget here.*
 
-I am working on [cost and usage budget](https://docs.aws.amazon.com/cli/latest/reference/budgets/create-budget):
+This work use [cost and usage budget](https://docs.aws.amazon.com/cli/latest/reference/budgets/create-budget):
 
 ```sh
 aws budgets create-budget \
@@ -73,6 +74,7 @@ aws budgets create-budget \
 
 _SNS for Billing alert: 
 To [create an SNS topic](https://docs.aws.amazon.com/cli/latest/reference/sns/create-topic): 
+
 ```sh
 aws sns create-topic \
     --name my-topic
@@ -95,13 +97,15 @@ aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.js
 ```
 
 
-## Reference & Settings:
-Setup token: 
+## Reference & Notes:
+*_Setup token: 
 ```sh
 git remote set-url origin https://$TOKEN@github.com//thaituan52/aws-bootcamp-cruddur-2023.git 
 ```
 
-[Reference for AWS CLI](https://docs.aws.amazon.com/cli/latest/reference/)
+_[Reference for AWS CLI](https://docs.aws.amazon.com/cli/latest/reference/)
+
+_All of the keys in this file are replaced with names/words for secuirty reasons*
 
 
 
