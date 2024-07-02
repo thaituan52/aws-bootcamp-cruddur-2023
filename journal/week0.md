@@ -67,7 +67,7 @@ To create an SNS topic (deprived from */sns/create-topic*):
 aws sns create-topic \
     --name my-topic
 ```
--> TopicArn -> a subscription supply the TopicARN and our Email - sns/subcription
+-> TopicArn -> a subscription supply the TopicARN and our Email - deprived from *sns/subcription*
 
 ```sh
 aws sns subscribe \
@@ -85,7 +85,7 @@ aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.js
 ```
 
 
-## Reference:
+## Reference & Settings:
 [Setup token](git remote set-url origin https://$TOKEN@github.com//thaituan52/aws-bootcamp-cruddur-2023.git )
 
 [Reference for AWS CLI](https://docs.aws.amazon.com/cli/latest/reference/)
