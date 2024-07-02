@@ -6,7 +6,7 @@ _ [Create a new User and Generate AWS Credentials](https://docs.aws.amazon.com/I
 In IAM of AWS, create a new user with admin access control and get their access key for later use (down CSV file or paste in somewhere).
 
 
-_ [Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) using Linux: 
+_ [Install AWS CLI using Linux:](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)  
 
 ```sh
 cd workspace
@@ -15,26 +15,27 @@ unzip awscliv2.zip
 sudo ./aws/install
 ```
 
-->
+then
 
 ```sh
 aws sts get-caller-identity
 ```
-Unable to locate credentials. You can configure credentials by running "aws configure".
-(Haven't set the environment variables at this point yet)
+At this point, we are unable to locate credentials (Haven't set the environment variables at this point yet). We can:
+_ Configure credentials by running:
+```sh
+aws configure
+```
 
 _ [Setup environment variables](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html) using the credentials we have:
 
 ```sh
-export AWS_ACCESS_KEY_ID=""
-export AWS_SECRET_ACCESS_KEY=""
-export AWS_DEFAULT_REGION= ""
+export AWS_ACCESS_KEY_ID="AWS_ACCESS_KEY_ID"
+export AWS_SECRET_ACCESS_KEY="AWS_SECRET_ACCESS_KEY"
+export AWS_DEFAULT_REGION= "AWS_DEFAULT_REGION"
 ```
+*Change export -> gp env to make it permanent*
 
-replace '' with your access keys
-change export -> gp env to make it permanent
-
-result:  
+result after:  
 ```json
 {
     "UserId": "AIDA2UC3EENEIL446QNDV",
@@ -95,7 +96,10 @@ aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.js
 
 
 ## Reference & Settings:
-Setup token : git remote set-url origin https://$TOKEN@github.com//thaituan52/aws-bootcamp-cruddur-2023.git 
+Setup token : 
+```sh
+git remote set-url origin https://$TOKEN@github.com//thaituan52/aws-bootcamp-cruddur-2023.git 
+```
 
 [Reference for AWS CLI](https://docs.aws.amazon.com/cli/latest/reference/)
 
