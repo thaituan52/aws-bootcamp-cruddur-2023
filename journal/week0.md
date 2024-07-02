@@ -98,14 +98,14 @@ aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/alarm_config.js
 
 
 ## Reference & Notes:
-*_Setup token: 
+_Setup token: 
 ```sh
 git remote set-url origin https://$TOKEN@github.com//thaituan52/aws-bootcamp-cruddur-2023.git 
 ```
 
 _[Reference for AWS CLI](https://docs.aws.amazon.com/cli/latest/reference/)
 
-_All of the keys in this file are replaced with names/words for secuirty reasons*
+_All of the keys in this file are replaced with names/words for secuirty reasons
 
 
 
