@@ -2,6 +2,7 @@
 *We gonna containerize the app using Docker which make other user of app who nothing to do with configurations and no need in compiling anything*
 
 ## Dockerfile on back-end (backend-flask/Dockerfile):
+We have host OS (our comp) and guest OS (the container) which are seperate entities
 
 ```Dockerfile
 FROM python:3.10-slim-buster
